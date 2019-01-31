@@ -1,0 +1,1 @@
+Soal no 3 harus di migrate dan seeder terlebih dahulu

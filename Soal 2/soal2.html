@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Input: </h2><input type="text" name="inputNumber" id="inputNumber"><br>
+<button type="button" onclick="btnsubmit();">Submit</button><br>
+<h2>Output: </h2><h3 id="outputNumber"></h3>
+
+<script>
+	function btnsubmit() {
+		var number = /^[0-9]+$/;
+		var val = document.getElementById("inputNumber").value;
+   		if (!val.match(number)){
+   			alert('Hanya angka');
+   			return false;
+   		}
+		var split = val.split("");
+		for (var i = 0; i < split.length - 1; i++) {
+			for (var j = 0 ; j < split.length - i - 1; j++){
+				if(parseInt(split[j]) > parseInt(split[j+1])){
+					split[j] = parseInt(split[j]) + parseInt(split[j+1]);
+					split[j+1] = parseInt(split[j]) - parseInt(split[j+1]);
+					split[j] = parseInt(split[j]) - parseInt(split[j+1]);
+				}
+			}
+		}
+		document.getElementById("outputNumber").innerHTML = split;
+	}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Input: </h2><input type="text" name="inputKata" id="inputKata"><br>
+<button type="button" onclick="btnsubmit();">Submit</button><br>
+<h2>Output: </h2><h3 id="outputKata"></h3>
+
+<script>
+	function btnsubmit() {
+		var huruf = /^[A-Za-z]+$/;
+		var val = document.getElementById("inputKata").value;
+   		if (!val.match(huruf)){
+   			alert('Hanya huruf');
+   			return false;
+   		}
+		var split = val.split("");
+		var tampung = [];
+		var berhenti = 0;
+		var hasil = "";
+		
+		for (var i = 0; i < split.length+1; i++) {
+			if(tampung.length == 0){
+
+			}
+			else{
+				for (var j = 0; j < tampung.length; j++) {
+					if(tampung[j] == split[i]){
+						if(berhenti == 0){
+							hasil = tampung[j];
+							berhenti = 1;
+						}
+						else{
+
+						}
+					}
+					else{
+
+					}
+				}
+			}
+			tampung[i] = split[i];
+		}
+
+		if(hasil == ""){
+			alert('Tidak ada yang sama');
+			return false;
+		}
+		else{
+			document.getElementById("outputKata").innerHTML = hasil;
+		}
+	}
+	
+</script>
+
+</body>
+</html>
